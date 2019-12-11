@@ -8,17 +8,18 @@ namespace CrudEjemplo.Controllers
         // 
         // GET: /HelloWorld/ 
 
-        public string Index()
+        public ActionResult Index()
         {
-            return "Este es el método <b>Por defecto</b> en acción...";
+            return View();
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
 
-        public string Welcome(string name, int ID = 1)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            ViewBag.Message = "Hola " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
     }
 }
